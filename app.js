@@ -6,6 +6,8 @@
 // name of delete and add 
 // every para delete should have btn
 
+var grandParent = document.getElementById("grand-parent")
+var inputGroup = document.getElementById("input-group")
 var parent = document.getElementById("parent");
 var inp = document.getElementById("inp");
 
@@ -27,7 +29,6 @@ function edt(button) {
         }
     }
     
-
 function addElement() {
         var pera = document.createElement("p");
         var text = document.createTextNode(inp.value);
@@ -37,11 +38,13 @@ function addElement() {
         var editBtn = document.createElement("button");
         var editText = document.createTextNode("Edit");
         editBtn.appendChild(editText);
+        editBtn.className = "btn btn-outline-dark btn-sm btn-primary" 
         editBtn.setAttribute("onclick", "edt(this)");
 
         var delBtn = document.createElement("button");
         var deletText = document.createTextNode("Delete");
         delBtn.appendChild(deletText);
+        delBtn.className = "btn btn-outline-dark btn-sm btn-danger" 
         delBtn.onclick = function() {
                 del(this);
             };
